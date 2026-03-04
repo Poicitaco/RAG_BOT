@@ -1,0 +1,55 @@
+# Dependencies cho Local AI (không cần OpenAI API)
+# Chỉ cần cài các packages này nếu dùng mode local
+
+# ============= Local LLM (Ollama) =============
+# Ollama sẽ chạy riêng, không cần pip install
+httpx>=0.27.0  # Để gọi API Ollama
+
+# ============= Local Embeddings =============
+sentence-transformers>=2.3.1
+torch>=2.1.0
+transformers>=4.36.0
+
+# ============= Local Voice (Whisper) =============
+faster-whisper>=1.0.0
+# ffmpeg cần được cài riêng (system-level)
+
+# ============= Optional: GPU Support =============
+# Uncomment nếu có NVIDIA GPU:
+# torch>=2.1.0+cu118 --index-url https://download.pytorch.org/whl/cu118
+# Hoặc AMD GPU:
+# torch>=2.1.0+rocm5.7 --index-url https://download.pytorch.org/whl/rocm5.7
+
+# ============= Core Dependencies (vẫn cần) =============
+fastapi>=0.109.0
+uvicorn>=0.27.0
+pydantic>=2.5.3
+pydantic-settings>=2.1.0
+python-multipart>=0.0.6
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-dotenv>=1.0.0
+aiofiles>=23.2.1
+pillow>=10.2.0
+pytesseract>=0.3.10
+
+# Database (optional for MVP)
+sqlalchemy>=2.0.25
+asyncpg>=0.29.0
+psycopg2-binary>=2.9.9
+redis>=5.0.1
+
+# Vector Store
+chromadb>=0.4.22
+
+# Logging & Monitoring
+loguru>=0.7.2
+prometheus-client>=0.19.0
+
+# Testing
+pytest>=7.4.3
+pytest-asyncio>=0.21.1
+httpx>=0.26.0
+
+# Frontend
+streamlit>=1.30.0
